@@ -1,24 +1,18 @@
-import React from 'react';
+import React, { FunctionComponent, useEffect, useMemo, useState } from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import Home from '../Home/Home';
+import Error404 from '../Error/Error404';
 import './App.css';
 
-function App() {
+export const App: FunctionComponent = (): JSX.Element => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route element={Error404} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
