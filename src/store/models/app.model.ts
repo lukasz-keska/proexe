@@ -6,14 +6,12 @@ export type AppStateType = ReturnType<typeof RootState>;
 export type DispatchFunction = ThunkDispatch<AppStateType, void, AnyAction>;
 
 export interface UserDataInterface {
-  address: { city: string };
   email: string;
   id: number;
   name: string;
   username: string;
 }
-
 export interface AppStateInterface {
   loaded: boolean;
-  data: Array<UserDataInterface>;
+  data: Array<UserDataInterface & { key: number; city: string }>;
 }

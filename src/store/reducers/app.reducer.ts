@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { AnyAction } from 'redux';
 import { setLocalDataFromApi } from '../actions/app.actions';
-import { AppStateInterface, DispatchFunction } from '../models/app.model';
+import { AppStateInterface, DispatchFunction, UserDataInterface } from '../models/app.model';
 
 const initialState: AppStateInterface = {
   loaded: false,
@@ -12,7 +12,23 @@ const initialState: AppStateInterface = {
 const appReducer = (state: AppStateInterface = initialState, { type, payload }: AnyAction) => {
   switch (type) {
     case setLocalDataFromApi.type:
-      return { ...state, loaded: true, data: payload };
+      const data = payload.map(
+        ({
+          email,
+          id,
+          name,
+          username,
+          address
+        }: UserDataInterface & { address: { city: string } }) => ({
+          email,
+          id,
+          key: id,
+          name,
+          username,
+          city: address.city
+        })
+      );
+      return { ...state, loaded: true, data };
     default:
       return state;
   }
