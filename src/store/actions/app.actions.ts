@@ -1,3 +1,4 @@
 import { createAction } from '@reduxjs/toolkit';
+import { UserDataInterface } from '../models/app.model';
 
-export const fetchDataFromApi = createAction<void>('FETCH_DATA');
+export const setLocalDataFromApi = createAction<UserDataInterface[]>('SET_LOCAL_DATA');
