@@ -96,8 +96,8 @@ const UserFormComponent: FunctionComponent = () => {
             username: jsonData.userName.replace(/\s/g, '_')
           })
         );
-        navigate('/');
       }
+      navigate('/');
     }
   };
 
