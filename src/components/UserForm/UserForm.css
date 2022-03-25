@@ -1,0 +1,55 @@
+.user-form {
+  max-width: 500px;
+  padding: 20px 12px 10px 20px;
+  font: 13px Arial, Helvetica, sans-serif;
+}
+.user-form-heading {
+  font-weight: bold;
+  font-style: italic;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 20px;
+  font-size: 15px;
+  padding-bottom: 3px;
+}
+.user-form label {
+  display: block;
+  margin: 0px 0px 15px 0px;
+}
+.user-form label > span {
+  width: 100px;
+  font-weight: bold;
+  float: left;
+  padding-top: 8px;
+  padding-right: 5px;
+}
+.user-form span.required {
+  color: red;
+}
+.user-form input.input-field {
+  width: 48%;
+}
+.user-form input.input-field {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: 1px solid #c2c2c2;
+  box-shadow: 1px 1px 4px #ebebeb;
+  -moz-box-shadow: 1px 1px 4px #ebebeb;
+  -webkit-box-shadow: 1px 1px 4px #ebebeb;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  padding: 7px;
+  outline: none;
+}
+.user-form .input-field:focus {
+  border: 1px solid rgb(5, 61, 5);
+}
+
+.user-form .input-field.error {
+  border: 1px solid rgb(204, 0, 0);
+}
+
+.user-form .error-msg {
+  color: rgb(204, 0, 0);
+}

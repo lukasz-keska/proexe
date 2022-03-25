@@ -7,11 +7,12 @@ export type DispatchFunction = ThunkDispatch<AppStateType, void, AnyAction>;
 
 export interface UserDataInterface {
   email: string;
-  id: number;
+  id?: number;
   name: string;
   username: string;
 }
 export interface AppStateInterface {
   loaded: boolean;
   data: Array<UserDataInterface & { key: number; city: string }>;
+  lastId: number;
 }
